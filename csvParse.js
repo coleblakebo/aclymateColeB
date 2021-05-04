@@ -1,4 +1,6 @@
 function formatCsv(raw) {
+
+
     /*Find the headers by checking to ensure row assigned to headers is not empty, and is the same length as the following row (to avoid setting metadata as header)*/
     if(raw.length < 2)
         return []
@@ -10,9 +12,13 @@ function formatCsv(raw) {
         headers = next
         next = raw.shift()
     }
-    raw.unshift(next)   
+    raw.unshift(next)
+
+
     //Creates the empty array to fill with objects
     formattedData = []
+
+
     //Iterates through the data
     for (i = 0; i < raw.length; i++) {
         curr = raw[i]
