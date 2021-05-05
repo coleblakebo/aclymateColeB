@@ -13,6 +13,7 @@ function schemaChecker(body, schema, boolArr = []){
                 if(schema[key].type != typeof body[key])
                     boolArr.push(false)
             }
+            schemaChecker(body[key],schema[key], boolArr)
         }
     })
     //Checks if false was ever pushed
